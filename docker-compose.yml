@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  web:
+    image: odoo:17.0
+    ports:
+      - "10000:8069" # Render dùng port 10000 mặc định cho Web Service
+    environment:
+      - HOST=${POSTGRES_HOST}
+      - PORT=${POSTGRES_PORT}
+      - USER=${POSTGRES_USER}
+      - PASSWORD=${POSTGRES_PASSWORD}
+      - DB_NAME=${POSTGRES_DB}
